@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
-import { NgxEchartsDirective, ThemeOption } from 'ngx-echarts';
-import * as echarts from 'echarts/core';
-import { BarChart } from 'echarts/charts';
-import { GridComponent } from 'echarts/components';
-import { CanvasRenderer } from 'echarts/renderers';
-echarts.use([BarChart, GridComponent, CanvasRenderer]);
+import { NgxEchartsDirective, provideEchartsCore, ThemeOption } from 'ngx-echarts';
+import * as echarts from 'echarts';
+// import { BarChart } from 'echarts/charts';
+// import { GridComponent } from 'echarts/components';
+// import { CanvasRenderer } from 'echarts/renderers';
+// echarts.use([BarChart, GridComponent, CanvasRenderer]);
 import type { ECElementEvent, ECharts, EChartsCoreOption } from 'echarts/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-charts-2',
-  imports: [NgxEchartsDirective],
+  imports: [CommonModule, NgxEchartsDirective],
   templateUrl: './charts-2.component.html',
-  styleUrl: './charts-2.component.css'
+  styleUrl: './charts-2.component.css',
+  providers: [
+    provideEchartsCore({ echarts }),
+  ]
 })
 export class Charts2Component {
   theme: string | ThemeOption = 'macarons';

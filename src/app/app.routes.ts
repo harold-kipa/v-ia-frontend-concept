@@ -4,8 +4,8 @@ import { Charts2Component } from './charts-2/charts-2.component';
 
 export const routes: Routes = [
     {
-        path: '**',
-        redirectTo: 'charts',
+        path: '',
+        redirectTo: 'charts2',
         pathMatch: 'full'
     },
     {
