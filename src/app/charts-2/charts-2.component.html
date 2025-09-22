@@ -5,4 +5,6 @@
   <button (click)="theme = 'macarons'" nz-button nzType="default">macarons(theme file)</button>
   <button (click)="theme = coolTheme" nz-button nzType="default">cool(theme object)</button>
 </div> -->
-<div echarts [options]="options" [theme]="theme" class="demo-chart"></div>
+<div echarts [options]="options" [initOpts]="{ renderer: 'svg' }" (chartInit)="onChartInit($event)" [theme]="theme" class="chart"></div>
+
+<button (click)="exportarSVG()">Exportar SVG</button>

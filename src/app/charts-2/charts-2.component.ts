@@ -7,6 +7,7 @@ import * as echarts from 'echarts';
 // echarts.use([BarChart, GridComponent, CanvasRenderer]);
 import type { ECElementEvent, ECharts, EChartsCoreOption } from 'echarts/core';
 import { CommonModule } from '@angular/common';
+import type { EChartsType } from 'echarts/core';
 
 @Component({
   selector: 'app-charts-2',
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
   ]
 })
 export class Charts2Component {
+  chart?: EChartsType;
   theme: string | ThemeOption = 'macarons';
   coolTheme = CoolTheme;
   options: EChartsCoreOption = {
@@ -34,7 +36,7 @@ export class Charts2Component {
     legend: {
       align: 'auto',
       bottom: 10,
-      data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8'],
+      data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8', 'rose9', 'rose10'],
     },
     calculable: true,
     series: [
@@ -52,10 +54,36 @@ export class Charts2Component {
           { value: 35, name: 'rose6' },
           { value: 30, name: 'rose7' },
           { value: 40, name: 'rose8' },
+          { value: 5, name: 'rose9' },
+          { value: 25, name: 'rose10' },
         ],
       },
     ],
   };
+  onChartInit(ec: EChartsType) {
+    this.chart = ec;
+  }
+  exportarSVG() {
+  if (!this.chart) return;
+
+  const dataUrl = this.chart.getDataURL({
+    type: 'svg',
+    backgroundColor: 'transparent', // opcional
+  });
+
+  // Descarga el blob desde la data URL y guarda como .svg
+  fetch(dataUrl)
+    .then(res => res.blob())
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.download = 'grafico.svg';
+      a.href = url;
+      a.click();
+      URL.revokeObjectURL(url);
+    })
+    .catch(err => console.error('Error exportando SVG:', err));
+  }
 }
 const CoolTheme = {
   color: [
