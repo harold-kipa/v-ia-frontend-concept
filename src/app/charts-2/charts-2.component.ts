@@ -20,7 +20,7 @@ import type { EChartsType } from 'echarts/core';
 })
 export class Charts2Component {
   chart?: EChartsType;
-  theme: string | ThemeOption = 'macarons';
+  theme: string | ThemeOption = CoolTheme;
   coolTheme = CoolTheme;
   options: EChartsCoreOption = {
     title: {
@@ -82,17 +82,18 @@ export class Charts2Component {
 }
 const CoolTheme = {
   color: [
-    '#b21ab4',
-    '#6f0099',
-    '#2a2073',
-    '#0b5ea8',
-    '#17aecc',
-    '#b3b3ff',
-    '#eb99ff',
-    '#fae6ff',
+    '#7b9526',
+    '#3b7c0f',
+    '#6F832E',
+    '#a08009',
+    '#ab6420',
+    '#e69911',
+    '#f5e442',
+    '#bfbb7f',
     '#e6f2ff',
     '#eeeeee',
   ],
+
 
   title: {
     fontWeight: 'normal',
