@@ -25,8 +25,8 @@ export class Charts2Component {
   options: EChartsCoreOption = {
     title: {
       left: '50%',
-      text: 'Nightingale Rose Diagram',
-      subtext: 'Mocking Data',
+      text: 'MOVIMIENTOS POR RESPONSABLE',
+      subtext: 'CAPEX POR GESTION SOCIAL',
       textAlign: 'center',
     },
     tooltip: {
@@ -36,7 +36,7 @@ export class Charts2Component {
     legend: {
       align: 'auto',
       bottom: 10,
-      data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8', 'rose9', 'rose10'],
+      data: ['BURGOS CASTAÑEDA GERMAN MAURICIO', 'RIOS GONZALLES RICARDO', 'PARDO ROJAS YEISSON EDILMER', 'CASTILLO RAMOS DIANA ALEJANDRA', 'RAMOS  SANDRA LILIANA'],
     },
     calculable: true,
     series: [
@@ -46,16 +46,11 @@ export class Charts2Component {
         radius: [30, 110],
         roseType: 'area',
         data: [
-          { value: 10, name: 'rose1' },
-          { value: 5, name: 'rose2' },
-          { value: 15, name: 'rose3' },
-          { value: 25, name: 'rose4' },
-          { value: 20, name: 'rose5' },
-          { value: 35, name: 'rose6' },
-          { value: 30, name: 'rose7' },
-          { value: 40, name: 'rose8' },
-          { value: 5, name: 'rose9' },
-          { value: 25, name: 'rose10' },
+          { value: 10, name: 'BURGOS CASTAÑEDA GERMAN MAURICIO' },
+          { value: 5, name: 'RIOS GONZALLES RICARDO' },
+          { value: 15, name: 'PARDO ROJAS YEISSON EDILMER' },
+          { value: 25, name: 'CASTILLO RAMOS DIANA ALEJANDRA' },
+          { value: 20, name: 'RAMOS  SANDRA LILIANA' },
         ],
       },
     ],

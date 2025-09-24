@@ -1,5 +1,5 @@
 <p>charts works!</p>
-<div
+<!-- <div
   echarts
   [options]="options"
   class="demo-chart"
@@ -12,7 +12,13 @@
   (chartMouseOut)="onChartEvent($event, 'chartMouseOut')"
   (chartGlobalOut)="onChartEvent($event, 'chartGlobalOut')"
   (chartContextMenu)="onChartEvent($event, 'chartContextMenu')"
-  (chartDataZoom)="onChartEvent($event, 'chartDataZoom')"></div>
+  (chartDataZoom)="onChartEvent($event, 'chartDataZoom')"></div> -->
+
+<div class="button-groups">
+  <button (click)="RandomDataset()" nz-button nzType="default">Random Dataset</button>
+</div>
+<div echarts [options]="options" [initOpts]="{ renderer: 'svg' }" (chartInit)="onChartInit($event)" [merge]="mergeOptions" class="demo-chart"></div>
+<button (click)="exportarSVG()">Exportar SVG</button>
 
   <!-- <iframe title="Seguimiento Proyecto KIPA LATAM" width="1140" height="541.25" src="https://app.fabric.microsoft.com/reportEmbed?reportId=47131cb9-8740-4e6d-b385-215417cf20b9&autoAuth=true&ctid=18246c11-9d0b-4b53-bb3e-473e0c7064a3" frameborder="0" allowFullScreen="true"></iframe> -->
  
